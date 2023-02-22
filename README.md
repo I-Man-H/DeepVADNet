@@ -12,7 +12,7 @@ Deep Learning Model for Simultaneous Prediction of Quantitative and Qualitative 
 + scipy
 
 ## Datasets
-* Two public datasets have been used in this paper. 
+* Two public datasets have been used in this paper to train and test the model. 
   + DEAP \[1\]: http://www.eecs.qmul.ac.uk/mmv/datasets/deap/index.html
   + MAHNOB-HCI \[2\]: http://mahnob-db.eu/hci-tagging
 
