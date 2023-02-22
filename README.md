@@ -45,7 +45,7 @@ Train and test the model using per-subject experiments with the following argume
 | --dataset | The dataset used for evaluation | DEAP |
 | --task | Emotion Classification Task | VADClassification |
 | --epoch | The number of epochs in training| 50 |
-| --lr | Learn rate in training| 0.001 |
+| --lr | Learn rate in training| 0.0005 |
 | --batch_size | The batch size used in training | 64 |
 | --face_feature_size | Face feature size | 16 |
 | --bio_feature_size | Bio-sensing feature size| 64 |
