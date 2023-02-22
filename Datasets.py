@@ -1,6 +1,4 @@
 import torch
-import torch.nn as nn
-import time
 import os
 from PIL import Image
 from torch.utils import data
@@ -9,9 +7,6 @@ import pandas as pd
 from torchvision import transforms as T
 import io
 import zipfile
-from torchnet import meter
-from torch.utils.data import DataLoader
-import scipy.io as scio
 
 
 
