@@ -128,6 +128,7 @@ Train and test the model using per-subject experiments with the following argume
 ## Citation
 
 If this repository is helpful to you, please consider citing our original paper:
+
 "[Deep learning model for simultaneous recognition of quantitative and qualitative emotion using visual and bio-sensing data](https://www.sciencedirect.com/science/article/pii/S1077314224002029)"
 
 ```bibtex
