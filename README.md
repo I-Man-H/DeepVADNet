@@ -2,6 +2,13 @@
 
 Deep Learning Model for Simultaneous Prediction of Quantitative and Qualitative Emotion using Viseual and Bio-sensing Data
 
+DeepVADNet is a novel end-to-end deep learning framework designed for multi-modal emotion recognition. This model leverages both visual data (facial expressions) and physiological signals (e.g., EEG, ECG) to predict both quantitative emotions (valence, arousal, dominance) and qualitative emotions (discrete labels like happiness, sadness, etc.) in a single forward pass.
+
+The model achieves state-of-the-art results on popular datasets, including DEAP and MAHNOB-HCI, with significant improvements in emotion recognition accuracy. You can find the full paper with detailed methodologies, experiments, and results in the link below.
+
+You can read the full paper [here](https://www.sciencedirect.com/science/article/pii/S1077314224002029).
+
+
 ## Framework & Architecture
 
 ![DeepVADNet Architecture-1](https://github.com/user-attachments/assets/9e51ed03-016e-4b9a-8cfb-f716bbb40640)
