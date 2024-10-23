@@ -61,10 +61,21 @@ Train and test the model using per-subject experiments with the following argume
 
 ## Citation
 
-If this repository is helpful to you, please consider citing our original paper "[Deep learning model for simultaneous recognition of quantitative and qualitative emotion using visual and bio-sensing data](https://www.sciencedirect.com/science/article/pii/S1077314224002029)"
+If this repository is helpful to you, please consider citing our original paper:
+"[Deep learning model for simultaneous recognition of quantitative and qualitative emotion using visual and bio-sensing data](https://www.sciencedirect.com/science/article/pii/S1077314224002029)"
 
+```bibtex
+@article{hosseini2024deep,
+  title={Deep learning model for simultaneous recognition of quantitative and qualitative emotion using visual and bio-sensing data},
+  author={Hosseini, Iman and Hossain, Md Zakir and Zhang, Yuhao and Rahman, Shafin},
+  journal={Computer Vision and Image Understanding},
+  volume={248},
+  pages={104121},
+  year={2024},
+  publisher={Elsevier}
+}
 
-
+```
 ## References
 \[1\] Koelstra, S., Muhl, C., Soleymani, M., Lee, J.S., Yazdani, A., Ebrahimi, T., Pun,
 T., Nijholt, A., Patras, L.: Deap: A database for emotion analysis using physiolog-
