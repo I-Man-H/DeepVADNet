@@ -64,25 +64,6 @@ Train and test the model using per-subject experiments with the following argume
 If this repository is helpful to you, please consider citing our original paper "[Deep learning model for simultaneous recognition of quantitative and qualitative emotion using visual and bio-sensing data](https://www.sciencedirect.com/science/article/pii/S1077314224002029)"
 
 
-cff-version: 1.2.0
-message: "If you use this work, please cite the following:"
-authors:
-  - family-names: Hosseini
-    given-names: Iman
-  - family-names: Hossain
-    given-names: Md Zakir
-  - family-names: Zhang
-    given-names: Yuhao
-  - family-names: Rahman
-    given-names: Shafin
-title: "Deep learning model for simultaneous recognition of quantitative and qualitative emotion using visual and bio-sensing data"
-year: 2024
-journal: "Computer Vision and Image Understanding"
-volume: 248
-pages: 104121
-doi: "10.1016/j.cviu.2023.104121"
-publisher: Elsevier
-
 
 ## References
 \[1\] Koelstra, S., Muhl, C., Soleymani, M., Lee, J.S., Yazdani, A., Ebrahimi, T., Pun,
