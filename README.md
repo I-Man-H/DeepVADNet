@@ -19,34 +19,16 @@ The architecture of our proposed DeepVADNet and the workflow for combined quanti
 
 ## Datasets
 
-In this research, we utilized two publicly available datasets to train and test DeepVADNet. These datasets provide multi-modal emotion data, including both visual and physiological signals, enabling comprehensive emotion recognition tasks.
+In this research, we used two publicly available datasets to train and test DeepVADNet. These datasets provide multi-modal emotion data, including both visual and physiological signals, enabling comprehensive emotion recognition tasks.
 
-### DEAP Dataset
 
-The **DEAP** \[1\] dataset is a widely used dataset for emotion analysis, consisting of EEG, physiological signals, and frontal face videos recorded from 32 participants as they watched 40 one-minute-long music videos. The dataset includes self-reported measures of valence, arousal, and dominance, providing a foundation for quantitative emotion analysis.
-
-- **Number of Subjects**: 32
-- **Modalities**: EEG, peripheral physiological signals, and frontal face videos
-- **Signals**: 32-channel EEG, EMG, GSR, respiration belt, and more
-- **Labels**: Valence, arousal, dominance, and liking ratings on a 9-point scale
-
-You can access the dataset at: [DEAP Dataset](http://www.eecs.qmul.ac.uk/mmv/datasets/deap/index.html)
-
-### MAHNOB-HCI Dataset
-
-The **MAHNOB-HCI** \[2\] dataset contains data from 27 participants who watched 20 movie clips designed to elicit emotional responses. This dataset offers both qualitative (discrete emotions like happiness, sadness, etc.) and quantitative (valence, arousal, dominance) emotion labels, making it ideal for multi-modal emotion recognition tasks. The dataset also includes synchronized recordings of facial expressions, eye gaze, EEG, and peripheral physiological signals.
-
-- **Number of Subjects**: 27
-- **Modalities**: Vision, EEG, ECG, eye gaze, and peripheral physiological signals
-- **Signals**: 32-channel EEG, ECG, GSR, respiration belt, and eye gaze data
-- **Labels**: Valence, arousal, dominance, and 9 discrete emotions
-
-You can access the dataset at: [MAHNOB-HCI Dataset](http://mahnob-db.eu/hci-tagging)
-
+| Dataset         | Number of Subjects | Modalities                                        | Signals                                                    | Labels                                   | Access Link |
+|-----------------|--------------------|---------------------------------------------------|------------------------------------------------------------|------------------------------------------|-------------|
+| **DEAP** \[1\]       | 32                 | EEG, peripheral physiological signals, face videos | 32-channel EEG, EMG, GSR, respiration belt, and more        | Valence, arousal, dominance, liking (9-point scale) | [DEAP Dataset](http://www.eecs.qmul.ac.uk/mmv/datasets/deap/index.html) |
+| **MAHNOB-HCI** \[2\] | 27                 | Vision, EEG, ECG, eye gaze, peripheral signals    | 32-channel EEG, ECG, GSR, respiration belt, eye gaze data   | Valence, arousal, dominance, 9 discrete emotions | [MAHNOB-HCI Dataset](http://mahnob-db.eu/hci-tagging) |
 
 
 ## Summary of Results
-
 
 The comparison of our model with previously established methods are discussed here. Classification accuracy (%) and mean square error (MSE) are presented on the left and right side respectively.
 
