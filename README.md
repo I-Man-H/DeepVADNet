@@ -11,40 +11,83 @@ You can read the full paper [here](https://www.sciencedirect.com/science/article
 
 ## Framework & Architecture
 
+The architecture of our proposed DeepVADNet and the workflow for combined quantitative and qualitative emotion recognition is:
+
 ![DeepVADNet Architecture-1](https://github.com/user-attachments/assets/9e51ed03-016e-4b9a-8cfb-f716bbb40640)
 
 
+
 ## Datasets
-* Two public datasets have been used in this paper to train and test the model. 
-  + DEAP \[1\]: http://www.eecs.qmul.ac.uk/mmv/datasets/deap/index.html
-  + MAHNOB-HCI \[2\]: http://mahnob-db.eu/hci-tagging
+
+In this research, we utilized two publicly available datasets to train and test DeepVADNet. These datasets provide multi-modal emotion data, including both visual and physiological signals, enabling comprehensive emotion recognition tasks.
+
+### DEAP Dataset
+
+The **DEAP** \[1\] dataset is a widely used dataset for emotion analysis, consisting of EEG, physiological signals, and frontal face videos recorded from 32 participants as they watched 40 one-minute-long music videos. The dataset includes self-reported measures of valence, arousal, and dominance, providing a foundation for quantitative emotion analysis.
+
+- **Number of Subjects**: 32
+- **Modalities**: EEG, peripheral physiological signals, and frontal face videos
+- **Signals**: 32-channel EEG, EMG, GSR, respiration belt, and more
+- **Labels**: Valence, arousal, dominance, and liking ratings on a 9-point scale
+
+You can access the dataset at: [DEAP Dataset](http://www.eecs.qmul.ac.uk/mmv/datasets/deap/index.html)
+
+### MAHNOB-HCI Dataset
+
+The **MAHNOB-HCI** \[2\] dataset contains data from 27 participants who watched 20 movie clips designed to elicit emotional responses. This dataset offers both qualitative (discrete emotions like happiness, sadness, etc.) and quantitative (valence, arousal, dominance) emotion labels, making it ideal for multi-modal emotion recognition tasks. The dataset also includes synchronized recordings of facial expressions, eye gaze, EEG, and peripheral physiological signals.
+
+- **Number of Subjects**: 27
+- **Modalities**: Vision, EEG, ECG, eye gaze, and peripheral physiological signals
+- **Signals**: 32-channel EEG, ECG, GSR, respiration belt, and eye gaze data
+- **Labels**: Valence, arousal, dominance, and 9 discrete emotions
+
+You can access the dataset at: [MAHNOB-HCI Dataset](http://mahnob-db.eu/hci-tagging)
+
 
 
 ## Summary of Results
 
 
-## Quantitative Emotion Recognition Experiment Results (Feature-level Fusion)
+The comparison of our model with previously established methods are discussed here. Classification accuracy (%) and mean square error (MSE) are presented on the left and right side respectively.
 
-Comparison with previous methods. Classification accuracy (%) on the left and mean square error (MSE) on the right.
+| Study                                        | Modalities          | Features                                               | Valence                  | Arousal                  | Dominance                 |
+|----------------------------------------------|---------------------|--------------------------------------------------------|--------------------------|--------------------------|---------------------------|
+|                             |                     |         **DEAP Dataset**                                                |                          |                          |                           |
+| Keoltra et al. (2012)                        | EEG, Peripheral      | PSD, Statistic                                          | 62.70%                   | 62.00%                   | -                         |
+| Tang et al. (2017)                           | Bio-sensing          | Differential entropy, Statistic                         | 83.82%                   | 83.23%                   | -                         |
+| Yang et al. (2018)                           | EEG                 | EEG deep learning-based                                 | 90.80%                   | 91.03%                   | -                         |
+| Anubhav et al. (2020)                        | EEG                 | EEG band power                                          | 94.69%                   | 93.13%                   | -                         |
+| Zhang et al. (2022)                          | EEG, Peripheral      | Bio-sensing deep learning-based                         | 90.46%                   | 93.22%                   | -                         |
+| Zhang et al. (2022)                          | EEG                 | EEG transformer-based                                   | 72.89%                   | 77.03%                   | -                         |
+| Wang et al. (2022)                           | EEG                 | EEG Spatial Transformer-based                           | 66.51%                   | 65.75%                   | -                         |
+| Li et al. (2022)                             | EEG                 | EEG deep learning-based                                 | 97.41%                   | 97.25%                   | 98.35%                    |
+| Li et al. (2022)                             | EEG                 | Spatial and frequency domain deep learning              | 95.15%                   | 95.76%                   | 95.64%                    |
+| Ding et al. (2022)                           | EEG                 | EEG deep learning-based                                 | 61.27%                   | 60.61%                   | -                         |
+| Kang et al. (2022)                           | PPG, GSR            | PPG and GSR deep learning-based                         | 80.25%                   | 81.33%                   | -                         |
+| Saffaryazdi et al. (2022)                    | Vision, Bio-sensing  | Face appearance, Bio-sensing deep learning-based        | 62.40%                   | 65.10%                   | -                         |
+| Wang et al. (2023)                           | Vision, EEG         | Face appearance, EEG deep learning-based                | 96.63%                   | 97.15%                   | -                         |
+| Peng et al. (2023)                           | EEG                 | EEG Temporal transformer-based                          | 95.18%                   | 95.58%                   | 95.78%                    |
+| Li et al. (2023)                             | Bio-sensing         | Spatial Frequency Bio-sensing deep learning-based       | 94.99%                   | 95.89%                   | -                         |
+| Yuvaraj et al. (2023)                        | EEG, Peripheral     | Statistical, WT, Fractal, Hjorth, HOS                   | 78.18%                   | 79.90%                   | -                         |
+| Gong et al. (2024)                           | EEG, Peripheral     | Bio-sensing transformer-based                           | 97.97%                   | 98.02%                   | -                         |
+| **This work**                                | Vision, Bio-sensing | Face appearance, Bio-sensing deep learning-based        | **98.89%/5e-4**          | **99.08%/8e-4**          | **98.82%/4e-4**           |
 
-| Study                                     | Modalities          | Features                                               | Valence           | Arousal           | Dominance         |
-|-------------------------------------------|---------------------|--------------------------------------------------------|-------------------|-------------------|-------------------|
-|                          |                     |      **DEAP Dataset**                                                   |                   |                   |                   |
-| Keoltra et al. (2014)                     | EEG, Peripheral      | PSD, Statistic                                          | 62.70%            | 62.00%            | -                 |
-| Tang et al. (2017)                        | Bio-sensing          | Differential entropy, Statistic                         | 83.82%            | 83.23%            | -                 |
-| Yang et al. (2018)                        | EEG                 | EEG deep learning-based                                 | 90.80%            | 91.03%            | -                 |
-| Anubhav et al. (2020)                     | EEG                 | EEG band power                                          | 94.69%            | 93.13%            | -                 |
-| **This work**                             | Vision, Bio-sensing  | Face appearance, Bio-sensing deep learning-based        | **98.89%/5e-4**   | **99.08%/8e-4**   | **98.82%/4e-4**   |
-|                    |                     |       **MAHNOB-HCI Dataset**                                                  |                   |                   |                   |
-| Soleymani et al. (2012)                   | Bio-sensing          | PSD, Statistic, etc.                                    | 57.00%            | 52.40%            | -                 |
-| Huang et al. (2016)                       | Vision, Bio-sensing  | Face appearance, PSD                                    | 57.47%            | 58.62%            | -                 |
-| Wiem et al. (2017)                        | Bio-sensing          | PSD, Statistic                                          | 68.75%            | 64.23%            | -                 |
-| Siddharth et al. (2018)                   | Vision, Bio-sensing  | Face appearance, PSD, Statistic, Physiological image-based | 85.49%            | 82.93%            | -                 |
-| **This work**                             | Vision, Bio-sensing  | Face appearance, Bio-sensing deep learning-based        | **89.98%/1.09**   | **88.60%/0.83**   | **88.13%/0.98**   |
-
-
-
-
+| Study                                        | Modalities          | Features                                               | Valence                  | Arousal                  | Dominance                 |
+|----------------------------------------------|---------------------|--------------------------------------------------------|--------------------------|--------------------------|---------------------------|
+|                       |                     |        **MAHNOB-HCI Dataset**                                                 |                          |                          |                           |
+| Soleymani et al. (2012)                      | Bio-sensing          | PSD, Statistic, etc.                                    | 57.00%                   | 52.40%                   | -                         |
+| Huang et al. (2016)                          | Vision, Bio-sensing  | Face appearance, PSD                                    | 57.47%                   | 58.62%                   | -                         |
+| Wiem et al. (2017)                           | Bio-sensing          | PSD, Statistic                                          | 68.75%                   | 64.23%                   | -                         |
+| Siddharth et al. (2019)                      | Vision, Bio-sensing  | Face appearance & geometric, PSD, Statistic             | 85.49%                   | 82.93%                   | -                         |
+| Zhang et al. (2022)                          | EEG                 | EEG transformer-based                                   | 79.90%                   | 81.37%                   | -                         |
+| Wang et al. (2022)                           | EEG                 | EEG Transformer-based                                   | 66.63%                   | 66.20%                   | -                         |
+| Kaur et al. (2022)                           | EEG                 | EEG deep learning-based                                 | 86.97%                   | 87.07%                   | -                         |
+| Ding et al. (2022)                           | EEG                 | EEG deep learning-based                                 | 62.27%                   | 63.75%                   | -                         |
+| Lopez et al. (2023)                          | EEG, Peripheral     | Bio-sensing deep learning-based                         | 44.30%                   | 41.56%                   | -                         |
+| Yuvaraj et al. (2023)                        | EEG, Peripheral     | Statistical, WT, Fractal, Hjorth, HOS                   | 83.98%                   | 85.58%                   | -                         |
+| Ouguz et al. (2023)                          | ECG                 | Morphological, HRV                                      | 78.28%                   | 83.61%                   | -                         |
+| Mellouk et al. (2023)                        | Peripheral          | Deep learning-based                                     | 73.33%                   | 60.00%                   | -                         |
+| **This work**                                | Vision, Bio-sensing | Face appearance, Bio-sensing deep learning-based        | **89.98%/1.09**          | **88.60%/0.83**          | **88.13%/0.98**           |
 
 
 
