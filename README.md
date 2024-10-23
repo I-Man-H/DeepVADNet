@@ -7,7 +7,45 @@ Deep Learning Model for Simultaneous Prediction of Quantitative and Qualitative 
 ![DeepVADNet Architecture-1](https://github.com/user-attachments/assets/9e51ed03-016e-4b9a-8cfb-f716bbb40640)
 
 
+## Datasets
+* Two public datasets have been used in this paper to train and test the model. 
+  + DEAP \[1\]: http://www.eecs.qmul.ac.uk/mmv/datasets/deap/index.html
+  + MAHNOB-HCI \[2\]: http://mahnob-db.eu/hci-tagging
+
+
+## Summary of Results
+
+
+## Quantitative Emotion Recognition Experiment Results (Feature-level Fusion)
+
+Comparison with previous methods. Classification accuracy (%) on the left and mean square error (MSE) on the right.
+
+| Study                                     | Modalities          | Features                                               | Valence           | Arousal           | Dominance         |
+|-------------------------------------------|---------------------|--------------------------------------------------------|-------------------|-------------------|-------------------|
+|                          |                     |      **DEAP Dataset**                                                   |                   |                   |                   |
+| Keoltra et al. (2014)                     | EEG, Peripheral      | PSD, Statistic                                          | 62.70%            | 62.00%            | -                 |
+| Tang et al. (2017)                        | Bio-sensing          | Differential entropy, Statistic                         | 83.82%            | 83.23%            | -                 |
+| Yang et al. (2018)                        | EEG                 | EEG deep learning-based                                 | 90.80%            | 91.03%            | -                 |
+| Anubhav et al. (2020)                     | EEG                 | EEG band power                                          | 94.69%            | 93.13%            | -                 |
+| **This work**                             | Vision, Bio-sensing  | Face appearance, Bio-sensing deep learning-based        | **98.89%/5e-4**   | **99.08%/8e-4**   | **98.82%/4e-4**   |
+|                    |                     |       **MAHNOB-HCI Dataset**                                                  |                   |                   |                   |
+| Soleymani et al. (2012)                   | Bio-sensing          | PSD, Statistic, etc.                                    | 57.00%            | 52.40%            | -                 |
+| Huang et al. (2016)                       | Vision, Bio-sensing  | Face appearance, PSD                                    | 57.47%            | 58.62%            | -                 |
+| Wiem et al. (2017)                        | Bio-sensing          | PSD, Statistic                                          | 68.75%            | 64.23%            | -                 |
+| Siddharth et al. (2018)                   | Vision, Bio-sensing  | Face appearance, PSD, Statistic, Physiological image-based | 85.49%            | 82.93%            | -                 |
+| **This work**                             | Vision, Bio-sensing  | Face appearance, Bio-sensing deep learning-based        | **89.98%/1.09**   | **88.60%/0.83**   | **88.13%/0.98**   |
+
+
+
+
+
+
+
+
+
 ## Dependencies
+The following environments are required 
+
 + Python 3.8
 + PyTorch
 + torchvision
@@ -16,10 +54,6 @@ Deep Learning Model for Simultaneous Prediction of Quantitative and Qualitative 
 + Pillow
 + scipy
 
-## Datasets
-* Two public datasets have been used in this paper to train and test the model. 
-  + DEAP \[1\]: http://www.eecs.qmul.ac.uk/mmv/datasets/deap/index.html
-  + MAHNOB-HCI \[2\]: http://mahnob-db.eu/hci-tagging
 
 ## Dataset Preprocessing
 * data_preprocess.py contains the functions used for data pre-process. It also provides a preprocess_demo() to preprocess DEAP dataset.
